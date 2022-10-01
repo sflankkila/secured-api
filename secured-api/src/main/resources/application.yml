@@ -1,0 +1,15 @@
+# Server port
+server:
+  port: 9999
+
+# Auth0
+auth0:
+  audience: https://secured-api.eu.auth0.com/api/v2/
+  domain: secured-api.eu.auth0.com
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://${auth0.domain}/
