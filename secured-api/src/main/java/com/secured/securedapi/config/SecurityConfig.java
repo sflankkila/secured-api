@@ -28,7 +28,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .mvcMatchers("/secured-api/public").permitAll()
-                .mvcMatchers("/secured-api/private").authenticated()
+                .anyRequest()
+                .authenticated()
                 .and()
                 .cors()
                 .configurationSource(corsConfigurationSource())
